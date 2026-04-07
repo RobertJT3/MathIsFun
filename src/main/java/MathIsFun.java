@@ -12,7 +12,7 @@ private String teacherComments;
 private String parent;
 
 public TrackingReports(String studentName, int score, int exercisesCompleted){
-String teacherComments (String parent) {
+String teacherComments(String parent){
 this.studentName = studentName;
 this.score = score;
 this.exercisesCompleted = exercisesCompleted;
