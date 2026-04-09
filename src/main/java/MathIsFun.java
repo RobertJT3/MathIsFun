@@ -11,8 +11,7 @@ private int exercisesCompleted;
 private String teacherComments;
 private String parent;
 
-public TrackingReports(String studentName, int score, int exercisesCompleted){
-String teacherComments(String parent){
+public TrackingReports(String studentName, int score, int exercisesCompleted, String teacherComments, String parent){
 this.studentName = studentName;
 this.score = score;
 this.exercisesCompleted = exercisesCompleted;
@@ -33,6 +32,13 @@ return exercisesCompleted;
 
 public String getTeacherComments() {
 return teacherComments;
+}
+boolean isExercisesCompleted = true;
+if(isExercisesCompleted){
+System.out.println("All exercises are complete for: " + studentName);
+}else{
+System.out.println("The student still has: " + score);
+
 }
 
 }
