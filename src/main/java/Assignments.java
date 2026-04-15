@@ -25,6 +25,12 @@ public class Assignments {
     public static void addAssignments(Assignments a){
         allAssignments.add(a);
     }
+
+    public void viewAssignments(){
+        for(Assignments a : allAssignments){
+            System.out.println(a);
+        }
+    }
     
       public static ArrayList<Assignments>getAllAssignments(){
         return allAssignments;
