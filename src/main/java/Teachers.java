@@ -12,8 +12,6 @@ public class Teachers {
     private String lastNames;
     private String emailAd;
     
-    private ArrayList<Assignments> allAssignments = new ArrayList<>();
-    
     public Teachers(){
         
     }
@@ -26,10 +24,8 @@ public class Teachers {
         
     }
     
-    public void viewAssignments(){
-        for(Assignments a : allAssignments){
-            System.out.println(a);
-        }
+   public void viewAssignments(Assignments info) {
+        info.viewAssignments();
     }
     
     
