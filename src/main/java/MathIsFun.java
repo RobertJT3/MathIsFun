@@ -79,7 +79,7 @@ public class MathIsFun {
                     } while (choice.equalsIgnoreCase("yes"));
 
                 } else if (decision == 2) {
-                    System.out.println("Assignment feature here");
+                    System.out.println("Assignments here");
                 } else if (decision == 3) {
                     information.viewStudents();
                     System.out.println("Amount of students: " + information.getStudents().size());
