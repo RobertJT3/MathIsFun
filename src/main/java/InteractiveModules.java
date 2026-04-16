@@ -40,7 +40,7 @@ public class InteractiveModules {
            }
            userGuess = input.nextInt();
            
-           
+           //If statement for increasing the games dfficulty on concecutive correct answers
            if (TheQuestion.getAnswer() == userGuess) {
                totalCorrect++;
                correctStreak++;
@@ -51,11 +51,12 @@ public class InteractiveModules {
                         correctStreak = 0;
                }
                System.out.println("Correct! Proceed to the next room.");
-               
+               // Else section to lower the difficulty on incorrect answers.
             } else {
                playerHealth--;
                totalIncorrect++;
                correctStreak = 0;
+               //If to prevent lowering the difficulty level below 1
                if (currentDifficulty > 1){
                currentDifficulty--;
                }
@@ -63,7 +64,7 @@ public class InteractiveModules {
            }
         
         }
-        System.out.println("========================");
+        System.out.println("===================================================");
         if (playerHealth > 0) {
             System.out.println("VICTORY! You cleared the mathmagical dungeon!");
         } else {
@@ -72,4 +73,13 @@ public class InteractiveModules {
         System.out.println("Final Stats - Correct: " + totalCorrect + " | Incorrect: " + totalIncorrect);
     }
     
+    //Getter for total correct answers during game or quiz
+    public int getTotalCorrect() {
+        return this.totalCorrect;
+    }
+    
+    //Getter for total incorrect answers during game or quiz
+    public int getTotalIncorrect() {
+        return this.totalIncorrect;
+    }
 }
