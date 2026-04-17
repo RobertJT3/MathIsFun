@@ -1,43 +1,44 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.mathisfun;
 
 import java.util.ArrayList;
 
 /**
  *
- * @author super
+ * @author Sumirah Hunter
  */
 public class Assignments {
-    private static ArrayList<Assignments> allAssignments = new ArrayList<>();
+    private final ArrayList<Assignments> allAssignments = new ArrayList<>();
     
     private String title;
     private String description;
     
+    public Assignments(){
+        
+    }
     
     public Assignments(String title, String description){
         this.title = title;
         this.description = description;
     }
     
-    public static void addAssignments(Assignments a){
+    public void addAssignments(String title, String description){
+        Assignments a = new Assignments(title, description);
         allAssignments.add(a);
+        System.out.print(a);
     }
-
+    
     public void viewAssignments(){
         for(Assignments a : allAssignments){
             System.out.println(a);
         }
     }
     
-      public static ArrayList<Assignments>getAllAssignments(){
+      public ArrayList<Assignments>getAllAssignments(){
         return allAssignments;
     }
       
     @Override
     public String toString() {
-        return title + " - " + description;
+        return title + "\n • " + description;
     }
 }
