@@ -1,3 +1,4 @@
+
 package com.mycompany.mathisfun;
 
 import java.util.Scanner;
@@ -19,7 +20,7 @@ public class MathIsFun {
         while (true) {
             System.out.println("Are you a Student? (yes/no)");
             student = in.nextLine();
-            if (student.equalsIgnoreCase("yes")) {
+            if (student.equalsIgnoreCase("yes") || student.equalsIgnoreCase("no")) {
                 break;
             }
             System.out.println("Please enter yes or no");
@@ -40,6 +41,9 @@ public class MathIsFun {
             System.out.println("Enter grade:");
             int grades = Integer.parseInt(in.nextLine());
 
+            System.out.println("Your assignments: ");
+            assign.viewAssignments();
+
             information.addStudent(names, lastName, emailAd, grades);
         }
 
@@ -47,7 +51,7 @@ public class MathIsFun {
         while (true) {
             System.out.println("\nAre you a Teacher? (yes/no)");
             teacher = in.nextLine();
-            if (teacher.equalsIgnoreCase("yes")) {
+            if (teacher.equalsIgnoreCase("yes") || teacher.equalsIgnoreCase("yes")) {
                 break;
             }
             System.out.println("Please enter yes or no");
