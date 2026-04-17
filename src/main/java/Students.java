@@ -1,6 +1,8 @@
 
 package com.mycompany.mathisfun;
 
+import java.util.ArrayList;
+
 
 
 /**
@@ -12,6 +14,7 @@ public class Students {
     private String lastNames;
     private String emailAd;
     private int grades;
+    private ArrayList<Assignments> assignments = new ArrayList<>();
     
     
     public Students(String names, String lastNames, String emailAd, int grades){
@@ -19,10 +22,16 @@ public class Students {
         this.lastNames = lastNames;
         this.emailAd = emailAd;
         this.grades = grades;
-        
     }
     
     
+    public void addAssignment(Assignments a){
+        assignments.add(a);
+    }
+    
+    public ArrayList<Assignments> getAssignments(){
+        return assignments;
+    }
 
     @Override
     public String toString() {
@@ -32,6 +41,7 @@ public class Students {
     public String getName(){
         return names;
     }
+    
     
     public String getLastNames(){
         return lastNames;
