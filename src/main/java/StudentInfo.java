@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.mathisfun;
 
 import java.util.ArrayList;
@@ -31,6 +27,10 @@ public class StudentInfo {
     }
     
     public void viewStudents(){
+        for(int i = 0; i < ListOfStudents.size(); i++){
+            
+        }
+        
         for (Students s : ListOfStudents){
             System.out.println(s);
         }
