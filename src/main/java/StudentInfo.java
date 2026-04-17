@@ -1,3 +1,4 @@
+
 package com.mycompany.mathisfun;
 
 import java.util.ArrayList;
@@ -28,7 +29,18 @@ public class StudentInfo {
     
     public void viewStudents(){
         for(int i = 0; i < ListOfStudents.size(); i++){
+            Students s = ListOfStudents.get(i);
             
+            System.out.println("Student " + i + ": " + s.getName() + " " + s.getLastNames());
+            System.out.println("Assignments");
+            
+            if(s.getAssignments().isEmpty()){
+                System.out.println("- None");
+            } else {
+                for (Assignments a : s.getAssignments()){
+                    System.out.println(" - " + a);
+                }
+            }
         }
         
         for (Students s : ListOfStudents){
