@@ -13,11 +13,11 @@ public class Students {
     private String names;
     private String lastNames;
     private String emailAd;
-    private int grades;
+    private String grades;
     private ArrayList<Assignments> assignments = new ArrayList<>();
     
     
-    public Students(String names, String lastNames, String emailAd, int grades){
+    public Students(String names, String lastNames, String emailAd, String grades){
         this.names = names;
         this.lastNames = lastNames;
         this.emailAd = emailAd;
@@ -32,10 +32,21 @@ public class Students {
     public ArrayList<Assignments> getAssignments(){
         return assignments;
     }
+    
+    public void viewAssignments(){
+        if(assignments.isEmpty()){
+            System.out.println("There are no assignments for you");
+            return;
+        }
+        System.out.println("Your assignments: ");
+        for(Assignments a : assignments){
+            System.out.println(a);
+        }
+    }
 
     @Override
     public String toString() {
-        return "\nStudent name: " + names + " " + "| Student last name: " + lastNames + " | Student email: " + emailAd + " | Grade: " + grades;
+     return "\nStudent name: " + names + " " + "| Student last name: " + lastNames + " | Student email: " + emailAd + " | Grade: " + grades;
     }
     
     public String getName(){
@@ -51,7 +62,7 @@ public class Students {
         return emailAd;
     }
     
-    public int getGrades(){
+    public String getGrades(){
         return grades;
     }
     
