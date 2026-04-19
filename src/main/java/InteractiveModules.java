@@ -1,4 +1,5 @@
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -11,20 +12,43 @@ import java.util.Scanner;
 public class InteractiveModules {
     private Scanner input = new Scanner(System.in);
     
-   //instance variables
+   /**
+    * Instance variable to track player health, ngl basically an extra totalIncorrect to control game loop and give gamified vibes.
+    */
     private int playerHealth = 5;
-    private int bossHealth = 10;
+    /**
+     * Instance variable to track the total number of questions answered correctly as an integer
+     */
     private int totalCorrect = 0;
+    /**
+     * Instance variable to track the total number of questions answered incorrectly as an integer
+     */
     private int totalIncorrect = 0;
+    /**
+     * Instance variable to track consecutive correct answers, used to increment difficulty
+     */
     private int correctStreak = 0;
+    /**
+     * Instance variable to determine the difficulty of questions generated for the game, default of 1 and max of 3
+     */
     private int currentDifficulty = 1;
+    /**
+     * Instance variable for tracking the number of questions asked, used to stop the game loop
+     */
+    private int questionsAsked = 0;
     
+    private ArrayList<String> questionLog = new ArrayList<>();
     
+    /**
+     * Method for playing a math question game. The game adjusts the difficulty of questions asked based on the amount of questions
+     * answered correctly and incorrectly
+     */
     public void playGame() {
          int userGuess;
         
-        while (playerHealth > 0 && totalCorrect < 10) {
+        while (playerHealth > 0 && questionsAsked < 10) {
            MathProblem TheQuestion = new MathProblem(currentDifficulty);
+           questionLog.add(TheQuestion.getQuestionText());
            System.out.println("--------------------------------");
            System.out.println("Progress: [Room " + (totalCorrect + 1) + " of 10]");
            System.out.println("Player Health: " + playerHealth);
@@ -62,7 +86,7 @@ public class InteractiveModules {
                }
                System.out.println("Incorrect. Difficulty modified, ready yourself!");
            }
-        
+            questionsAsked++;
         }
         System.out.println("===================================================");
         if (playerHealth > 0) {
@@ -73,13 +97,26 @@ public class InteractiveModules {
         System.out.println("Final Stats - Correct: " + totalCorrect + " | Incorrect: " + totalIncorrect);
     }
     
-    //Getter for total correct answers during game or quiz
+    /**
+     * Getter for total correct answers during game or quiz
+     * @return Returns amount of questions answered correctly
+     */
     public int getTotalCorrect() {
         return this.totalCorrect;
     }
     
-    //Getter for total incorrect answers during game or quiz
+    /**
+     * Getter for total incorrect answers during game or quiz
+     * @return Returns amount of questions answered incorrectly
+     */
     public int getTotalIncorrect() {
         return this.totalIncorrect;
+    }
+    /**
+     * Getter for ArrayList of generated math questions
+     * @return Returns a log of the math questions generated during the game or quiz
+     */
+    public ArrayList<String> getQuestionLog() {
+        return this.questionLog;
     }
 }

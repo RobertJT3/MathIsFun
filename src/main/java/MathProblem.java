@@ -30,31 +30,31 @@ public class MathProblem {
         
         //if & else if for determining question difficulty
         if (level == 1) {
-            // Easy: 1-10
+            // Easy: 1-10 operators: +, -
             num1 = (int)(Math.random() * 10) + 1;
             num2 = (int)(Math.random() * 10) + 1;
             this.op = operator[randomIndex];
             answer = num1 + num2;
         } 
         else if (level == 2) {
-            // Medium: 10-20
+            // Medium: 10-20 operators: +, -, *
             num1 = (int)(Math.random() * 11) + 10;
             num2 = (int)(Math.random() * 11) + 10;
             this.op = operator[randomIndex];
             answer = num1 * num2;
         }
         else if(level == 3) {
-        // Hard: 20-50 for +, -, *, and 20-50 with 2-10 for /
+        // Hard: 10-20 for +, -, *, and 10-20 with 2-10 for /
         this.op = operator[randomIndex];
         if (this.op == '/') {
             do {
-                num1 = (int)(Math.random() * 31) + 20;
+                num1 = (int)(Math.random() * 11) + 10;
                 num2 = (int)(Math.random() * 10) + 2;
                 //prevents divison by zero and questions that would generate fraction answer
             } while (num1 % num2 != 0 || num1 == num2);
         } else {
-            num1 = (int)(Math.random() * 31) + 20;
-            num2 = (int)(Math.random() * 31) + 20;
+            num1 = (int)(Math.random() * 11) + 10;
+            num2 = (int)(Math.random() * 11) + 10;
         }
         
         }

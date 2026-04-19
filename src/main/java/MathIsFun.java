@@ -12,5 +12,8 @@ public class MathIsFun {
         System.out.println("--- Starting Math Game ---");
         
         myGame.playGame();
+        
+        System.out.println(myGame.getQuestionLog());
     }
+    
 }
