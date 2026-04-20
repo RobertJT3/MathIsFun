@@ -1,25 +1,39 @@
 /**
- *
+ *MathProblem class for generating math question objects for the InteractiveModules class
  * @author treyt
  */
-
-
 public class MathProblem {
     
-    //Instance variables
+    /**
+     * Instance variable to store the first number generated needed to assemble to math problem
+     */
     private int num1;
+    /**
+     * Instance variable to store the second number generated needed to assemble to math problem
+     */
     private int num2;
+    /**
+     * Instance variable to store the answer for the generated math problem
+     */
     private int answer;
+    /**
+     * Instance variable to store the operator used in the generated math problem
+     */
     private char op;
     
     
-
-    // The Constructor: It just takes the level and calls a setup method
+    /**
+     * Default constructor for the MathProblem, constructs a math problem based on the level dictated by the game state in InteractiveModules
+     * @param level Integer 1-3 for the level of question to be generated, default 1 and adjusts based on correct/incorrect answers. 
+     */
     public MathProblem(int level) {
         generateNumbers(level);
     }
 
-    //Number generation for level 1, 2, 3 (Easy, Medium, Hard)
+    /**
+     * Number generation for math questions and operator selection for level 1, 2, 3 (Easy, Medium, Hard)
+     * @param level Integer 1-3 for the level of question to be generated, default 1 and adjusts based on correct/incorrect answers.
+     */
     public void generateNumbers(int level) {
         
         //Array for mathmatical operators and limiter variable
@@ -50,7 +64,7 @@ public class MathProblem {
             do {
                 num1 = (int)(Math.random() * 11) + 10;
                 num2 = (int)(Math.random() * 10) + 2;
-                //prevents divison by zero and questions that would generate fraction answer
+                //prevents divison by zero and questions that would generate fraction answer. (Simplified to avoid confusing the user by asking questions with double type answers)
             } while (num1 % num2 != 0 || num1 == num2);
         } else {
             num1 = (int)(Math.random() * 11) + 10;
@@ -70,11 +84,17 @@ public class MathProblem {
             break;
         }
     }
-    //Getter for the answer
+    /**
+     * Getter for the answer
+     * @return returns the answer of the currently generated question
+     */
     public int getAnswer() {
         return this.answer;
     }
-    //Getter for the question
+    /**
+     * Getter for the question generated
+     * @return returns full assembled math question as a string
+     */
     public String getQuestionText() {
         return num1 + " " + op + " " + num2 + " = ?";
     }
