@@ -1,6 +1,16 @@
 import java.util.Scanner;
 
+/**
+ * The ParentDashboard class allows parents to view student grades
+ * by searching for a student's last name.
+ */
 public class ParentDashboard {
+
+    /**
+     * Prompts the user to enter a last name and displays all matching students' grades.
+     *
+     * @param students An array of StudentReport objects
+     */
     public static void showGradesByLastName(StudentReport[] students) {
         Scanner input = new Scanner(System.in);
 
